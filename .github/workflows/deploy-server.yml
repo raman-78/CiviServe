@@ -1,0 +1,17 @@
+name: Deploy Server (Railway)
+
+on:
+  push:
+    branches: [main]
+    paths: ["server/**", "database/**", ".github/workflows/deploy-server.yml"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Railway
+        uses: railway-org/railway-action@v3
+        with:
+          token: ${{ secrets.RAILWAY_TOKEN }}
+          service: scheme-sathi-server

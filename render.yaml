@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: civiserve-api
+    runtime: docker
+    repo: https://github.com/YOUR_GITHUB_USERNAME/civiserve # TODO: set your repo
+    dockerfilePath: server/Dockerfile
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: ENV
+        value: development # keeps DEBUG bootstrap (schema + seed) active
+      - key: DEBUG
+        value: "true"
+      - key: APP_NAME
+        value: civiserve-api
+      - key: LOG_LEVEL
+        value: INFO
+      - key: CORS_ORIGINS
+        value: '["https://civiserve.web.app","https://civiserve.firebaseapp.com"]'
+      - key: DATABASE_URL
+        sync: false # set manually to your Neon URL (postgresql+asyncpg://...pooler...?sslmode=require&pgbouncer=true)
+      - key: REDIS_URL
+        value: redis://localhost:6379/0 # unused by code; keep default
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false # paste the full service-account JSON contents
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-flash-latest
+      - key: TRANSLATION_PROVIDER
+        value: identity # change to google + set key when you have GOOGLE_TRANSLATE_API_KEY
+      - key: GOOGLE_TRANSLATE_API_KEY
+        sync: false

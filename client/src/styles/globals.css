@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 176 68% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 176 40% 94%;
+    --accent-foreground: 176 68% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 176 68% 26%;
+    --radius: 0.625rem;
+    --font-sans: "Inter", "Noto Sans", "Noto Sans Devanagari", system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --primary: 176 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 20%;
+    --accent-foreground: 176 60% 70%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 176 60% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Locator map markers (Leaflet divIcon, maps/locator prompt). */
+.center-marker-pin {
+  width: 26px;
+  height: 34px;
+  background: hsl(var(--primary));
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid hsl(var(--card));
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.35);
+}
+
+.center-marker-pin::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  background: hsl(var(--card));
+  border-radius: 50%;
+}
+
+.center-marker-pin--verified {
+  background: #15803d;
+}
+
+.center-marker-dot {
+  width: 14px;
+  height: 14px;
+  background: hsl(var(--primary));
+  border: 3px solid hsl(var(--card));
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.4);
+}
+
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0;
+}

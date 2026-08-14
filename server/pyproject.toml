@@ -1,0 +1,73 @@
+[project]
+name = "scheme-sathi-server"
+version = "0.1.0"
+description = "Backend for the Multilingual Citizen Service Chatbot for Government Schemes (HackElite 2026)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.9,<3.0",
+    "pydantic-settings>=2.6",
+    "sqlalchemy>=2.0,<3.0",
+    "alembic>=1.14",
+    "psycopg[binary]>=3.2",
+    "asyncpg>=0.30",
+    "python-dotenv>=1.0",
+    "orjson>=3.10",
+    "httpx>=0.27",
+    "python-multipart>=0.0.12",
+    "tenacity>=9.0",
+    "firebase-admin>=6.6",
+    "google-genai>=1.0",
+    "google-cloud-translate>=3.16",
+    "google-cloud-speech>=2.27",
+    "google-cloud-texttospeech>=2.17",
+    "google-cloud-storage>=2.18",
+    "redis>=5.2",
+    "structlog>=24.4",
+    "prometheus-client>=0.21",
+    "sentry-sdk[fastapi]>=2.17",
+    "zstandard>=0.23",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC", "S", "SIM"]
+ignore = ["S101"]  # allow assert in tests
+
+[tool.ruff.lint.per-file-ignores]
+# Translation data: line-length is irrelevant for localized copy strings.
+"app/services/translation/glossary.py" = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q --cov=app --cov-report=term-missing"
+
+[tool.coverage.run]
+omit = ["tests/*", "app/main.py"]

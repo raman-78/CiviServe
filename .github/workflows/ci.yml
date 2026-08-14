@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  client-checks:
+    name: Client (typecheck, lint, test, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @schemesathi/shared typecheck lint
+      - run: pnpm --filter @schemesathi/client typecheck lint test
+      - run: pnpm --filter @schemesathi/client build
+
+  server-checks:
+    name: Server (ruff, mypy, pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -e server
+      - run: pip install -r server/requirements-dev.txt
+      - run: ruff check server
+      - run: ruff format --check server
+      - run: mypy server
+      - run: pytest server/tests --maxfail=1
+        env:
+          DATABASE_URL: "postgresql+asyncpg://postgres:postgres@localhost:5432/test"
+          FIREBASE_PROJECT_ID: "test"

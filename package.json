@@ -1,0 +1,31 @@
+{
+  "name": "scheme-sathi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multilingual Citizen Service Chatbot for Government Schemes (HackElite 2026)",
+  "type": "module",
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "workspaces": [
+    "client",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -n client,server -c cyan,green \"pnpm dev:client\" \"pnpm dev:server\"",
+    "dev:client": "pnpm --filter @schemesathi/client dev",
+    "dev:server": "python -m uvicorn app.main:app --reload --app-dir server",
+    "build": "pnpm --filter @schemesathi/client build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "lint:server": "python -m ruff check server",
+    "format": "pnpm -r format && python -m ruff format server",
+    "test": "pnpm -r test",
+    "test:server": "python -m pytest server/tests",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

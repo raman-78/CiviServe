@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemesathi.in/schemas/scheme.schema.json",
+  "title": "Scheme",
+  "description": "Canonical, language-neutral contract for a government scheme. The TS types in shared/src/domain/scheme.ts, the server Pydantic models, and the DB schema must all conform to this shape.",
+  "type": "object",
+  "required": [
+    "id", "code", "ministry", "stateCode", "category", "name",
+    "summary", "benefits", "eligibilityRules", "requiredDocuments",
+    "applicationLinks", "tags", "lastVerifiedAt"
+  ],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "code": { "type": "string", "examples": ["PM-KISAN"] },
+    "ministry": { "type": "string" },
+    "stateCode": { "type": "string", "pattern": "^[A-Z]{2}$|^\\*$", "examples": ["*", "TN", "KA"] },
+    "category": {
+      "type": "string",
+      "enum": ["education", "health", "housing", "employment", "agriculture", "pension", "women", "disability", "food-security", "financial-inclusion", "other"]
+    },
+    "name": { "type": "object", "properties": { "en": { "type": "string" }, "native": { "type": "string" } }, "required": ["en", "native"] },
+    "summary": { "type": "object", "properties": { "en": { "type": "string" }, "native": { "type": "string" } }, "required": ["en", "native"] },
+    "benefits": { "type": "array", "items": { "type": "string" } },
+    "eligibilityRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "operator", "value", "description"],
+        "properties": {
+          "field": { "type": "string", "enum": ["age", "gender", "state", "district", "income_band", "caste_category", "occupation"] },
+          "operator": { "type": "string", "enum": ["eq", "neq", "gte", "lte", "in", "between", "exists"] },
+          "value": { "oneOf": [{ "type": "string" }, { "type": "number" }, { "type": "array", "items": { "type": "string" } }, { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }] },
+          "description": { "type": "string" }
+        }
+      }
+    },
+"requiredDocuments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "kind", "optional", "ocrSupported"],
+            "properties": {
+              "id": { "type": "string", "format": "uuid" },
+              "name": { "type": "string", "examples": ["AADHAAR"] },
+              "kind": { "type": "string", "enum": ["identity", "address", "income", "age", "caste", "bank", "land", "disability", "family", "photo", "other"] },
+              "localizedNames": { "type": "object", "additionalProperties": { "type": "string" } },
+              "optional": { "type": "boolean" },
+              "ocrSupported": { "type": "boolean" },
+              "verificationHint": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+    "applicationLinks": {
+      "type": "object",
+      "properties": {
+        "online": { "type": "string", "format": "uri" },
+        "offline": { "type": "string" },
+        "helpline": { "type": "string" },
+        "sourceUrl": { "type": "string", "format": "uri" }
+      }
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "validUntil": { "type": "string", "format": "date" },
+    "lastVerifiedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": true
+}
