@@ -2,7 +2,7 @@ services:
   - type: web
     name: civiserve-api
     runtime: docker
-    repo: https://github.com/YOUR_GITHUB_USERNAME/civiserve # TODO: set your repo
+    repo: https://github.com/raman-78/CiviServe
     dockerfilePath: server/Dockerfile
     plan: free
     healthCheckPath: /healthz
@@ -16,7 +16,7 @@ services:
       - key: LOG_LEVEL
         value: INFO
       - key: CORS_ORIGINS
-        value: '["https://civiserve.web.app","https://civiserve.firebaseapp.com"]'
+        value: '["https://civiserve.vercel.app","https://chatbot-mocha-beta-10.vercel.app"]'
       - key: DATABASE_URL
         sync: false # set manually to your Neon URL (postgresql+asyncpg://...pooler...?sslmode=require&pgbouncer=true)
       - key: REDIS_URL
