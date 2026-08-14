@@ -3,7 +3,8 @@ services:
     name: civiserve-api
     runtime: docker
     repo: https://github.com/raman-78/CiviServe
-    dockerfilePath: server/Dockerfile
+    rootDir: server
+    dockerfilePath: Dockerfile
     plan: free
     healthCheckPath: /healthz
     envVars:
