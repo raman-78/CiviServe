@@ -7,7 +7,7 @@ import { MicButton, type MicButtonState } from "@/components/shared/MicButton";
 import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { SPEECH_LOCALES } from "@schemesathi/shared";
+import { SPEECH_LOCALES } from "@civiserve/shared";
 
 interface ChatInputProps {
   onSend: (text: string) => void;

@@ -24,7 +24,7 @@ cp server/.env.example server/.env        # fill DATABASE_URL + keys
 
 ```bash
 # Terminal 1 — frontend (HMR on :5173, proxies /api → :8000)
-pnpm --filter @schemesathi/client dev
+pnpm --filter @civiserve/client dev
 
 # Terminal 2 — backend (reload on :8000)
 python -m uvicorn app.main:app --reload --app-dir server

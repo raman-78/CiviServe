@@ -22,7 +22,7 @@ locate nearby CSC / e-Sevai centers, and apply — in **text and voice**, across
 | Speech    | Browser Web Speech (MVP adapters; cloud-ready interfaces)               |
 | OCR       | Tesseract.js (browser) → PaddleOCR (backend, future)                    |
 | Maps      | Leaflet + OpenStreetMap (MVP; Google Maps adapter-ready)                |
-| Deploy    | Vercel (client) · Railway/Render (server) · Neon (DB)                   |
+| Deploy    | Vercel (client + server functions) · Neon (DB)                          |
 
 ---
 
@@ -54,7 +54,7 @@ Prereqs: Node ≥ 20, pnpm ≥ 9, Python ≥ 3.11.
 pnpm install
 
 # 2. Frontend
-pnpm --filter @schemesathi/client dev        # http://localhost:5173
+pnpm --filter @civiserve/client dev        # http://localhost:5173
 
 # 3. Backend (Python virtual environment)
 python -m venv server/.venv
@@ -71,6 +71,55 @@ cp server/.env.example server/.env           # DATABASE_URL, Gemini key, Firebas
 > The public scheme catalog (`/api/v1/schemes`) works with a local database and
 > the seeded demo schemes (see `server/app/db/seeds.py`). Authentication,
 > AI chat, and translation need the Firebase + Gemini credentials above.
+
+---
+
+## Deploy on Vercel
+
+Two Vercel projects (same repo, separate root directories):
+
+**1. Backend (`server/`)**
+
+- Import the repo, set **Root Directory** to `server`.
+- Framework is auto-detected as **FastAPI**; the entrypoint is pinned via
+  `[tool.vercel] entrypoint = "app.main:app"` in `server/pyproject.toml`.
+- `server/vercel.json` bumps `maxDuration` to 60 s (SSE chat + Gemini) and
+  excludes tests/local files from the bundle.
+- Set these **Environment Variables** (Production):
+
+  ```
+  ENV=production
+  DEBUG=false
+  CORS_ORIGINS=["https://<your-client-domain>.vercel.app"]
+  DATABASE_URL=postgresql+asyncpg://...?sslmode=require&pgbouncer=true   # Neon
+  FIREBASE_PROJECT_ID=...
+  FIREBASE_SERVICE_ACCOUNT_JSON={ "type": "service_account", ... }       # raw JSON
+  GEMINI_API_KEY=...
+  GEMINI_MODEL=gemini-flash-latest
+  TRANSLATION_PROVIDER=identity
+  ```
+
+  Apply schema + seed data before first request:
+
+  ```bash
+  python -m uvicorn app.main:app --app-dir server   # one-off, DEBUG=true + ENV=development
+  ```
+
+**2. Frontend (`client/`)**
+
+- Import the repo, set **Root Directory** to `client`.
+- `client/vercel.json` installs at the monorepo root (`cd .. && pnpm install`)
+  so the `@civiserve/shared` workspace resolves, then builds the client.
+- Set these **Environment Variables** (Production): copy from
+  `client/.env.example` (`VITE_FIREBASE_*`, `VITE_APP_*`, feature flags) and set
+
+  ```
+  VITE_API_BASE_URL=https://<your-backend-domain>.vercel.app
+  ```
+
+> Serverless caveats: document uploads use the function's ephemeral
+> `storage/` (not durable); Redis is unused (in-process rate limiting);
+> production schema/seed is applied manually as above.
 
 ---
 

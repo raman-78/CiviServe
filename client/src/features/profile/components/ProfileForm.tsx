@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
-import type { UserProfile } from "@schemesathi/shared";
+import type { UserProfile } from "@civiserve/shared";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { errorMessage } from "@/lib/errors";

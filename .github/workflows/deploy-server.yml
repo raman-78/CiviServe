@@ -14,4 +14,4 @@ jobs:
         uses: railway-org/railway-action@v3
         with:
           token: ${{ secrets.RAILWAY_TOKEN }}
-          service: scheme-sathi-server
+          service: civiserve-server

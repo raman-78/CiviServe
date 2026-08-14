@@ -1,6 +1,6 @@
 /** Typed API access for profile endpoints (docs/architecture/04). */
 import { del, get, put } from "@/lib/api-client";
-import type { ProfileCompletion, ProfileUpdate, UserProfile } from "@schemesathi/shared";
+import type { ProfileCompletion, ProfileUpdate, UserProfile } from "@civiserve/shared";
 
 export async function fetchProfile(): Promise<UserProfile> {
   return (await get<UserProfile>("/users/me/profile")).data;

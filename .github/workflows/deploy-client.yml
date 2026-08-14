@@ -18,7 +18,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @schemesathi/client build
+      - run: pnpm --filter @civiserve/client build
       - name: Deploy to Vercel
         run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
         working-directory: client

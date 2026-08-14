@@ -1,6 +1,6 @@
 # Documentation
 
-Living documentation for **Scheme Sathi — Multilingual Citizen Service Chatbot for
+Living documentation for **CiviServe — Multilingual Citizen Service Chatbot for
 Government Schemes** (HackElite 2026).
 
 ## Index

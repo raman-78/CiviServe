@@ -5,7 +5,7 @@ import type { ChatMessage } from "@/types";
 import { useSettingsStore } from "@/store/settingsSlice";
 import { useSpeaker } from "@/hooks/useSpeaker";
 import { Button } from "@/components/ui/button";
-import { SPEECH_LOCALES, SPEECH_RATES } from "@schemesathi/shared";
+import { SPEECH_LOCALES, SPEECH_RATES } from "@civiserve/shared";
 
 interface RepeatPromptProps {
   message: ChatMessage;

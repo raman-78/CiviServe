@@ -5,7 +5,7 @@
 import { useEffect } from "react";
 import { useUiStore, type Theme } from "@/store/uiSlice";
 
-const STORAGE_KEY = "scheme-sathi-theme";
+const STORAGE_KEY = "civiserve-theme";
 
 function resolveTheme(theme: Theme): "light" | "dark" {
   if (theme !== "system") return theme;

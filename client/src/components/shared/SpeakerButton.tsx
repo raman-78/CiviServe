@@ -4,8 +4,8 @@ import { useSpeaker } from "@/hooks/useSpeaker";
 import { useSettingsStore } from "@/store/settingsSlice";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { SPEECH_LOCALES, SPEECH_RATES } from "@schemesathi/shared";
-import type { LanguageCode } from "@schemesathi/shared";
+import { SPEECH_LOCALES, SPEECH_RATES } from "@civiserve/shared";
+import type { LanguageCode } from "@civiserve/shared";
 
 interface SpeakerButtonProps {
   /** Stable unique id for this button (drives the single-speaker state). */

@@ -13,7 +13,7 @@ export type {
   QuickReply,
   SchemeRecommendation,
   SchemeReference,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 export type {
   EligibilityField,
@@ -33,7 +33,7 @@ export type {
   SchemeStatus,
   SchemeSummary,
   SchemeVerificationStatus,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 export type {
   ChecklistItem,
@@ -49,7 +49,7 @@ export type {
   OcrResult,
   UserDocument,
   UserDocumentListResponse,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 export type {
   CenterAttribution,
@@ -66,7 +66,7 @@ export type {
   NearbyCentersRequest,
   NearbyCentersResponse,
   ServiceCenter,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 export type {
   AccessibilityPreferences,
@@ -84,11 +84,11 @@ export type {
   ProfileUpdate,
   UserProfile,
   UserRole,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
-export type { LanguageCode, StateCode, UUID } from "@schemesathi/shared";
+export type { LanguageCode, StateCode, UUID } from "@civiserve/shared";
 
-export type { LanguageInfo } from "@schemesathi/shared";
+export type { LanguageInfo } from "@civiserve/shared";
 
 /** A single item in the notification inbox (UI placeholder). */
 export interface AppNotification {

@@ -23,7 +23,7 @@ import {
 import { applyUILanguage } from "@/i18n";
 import { SUPPORTED_UI_LANGUAGES } from "@/lib/constants";
 import { useSettingsStore } from "@/store/settingsSlice";
-import type { LanguageCode } from "@schemesathi/shared";
+import type { LanguageCode } from "@civiserve/shared";
 import type { ProfileFormValues } from "@/features/profile/profileSchema";
 
 type FieldName = FieldPath<ProfileFormValues>;

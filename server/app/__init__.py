@@ -1,1 +1,1 @@
-"""Scheme Sathi backend package."""
+"""CiviServe backend package."""

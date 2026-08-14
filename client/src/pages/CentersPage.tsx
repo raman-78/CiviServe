@@ -17,7 +17,7 @@ import {
   MapPinOff,
   Navigation,
 } from "lucide-react";
-import { CENTER_RADIUS_PRESETS } from "@schemesathi/shared";
+import { CENTER_RADIUS_PRESETS } from "@civiserve/shared";
 
 import { EmptyState } from "@/components/shared/EmptyState";
 import { PageHeader } from "@/components/shared/PageHeader";

@@ -20,7 +20,7 @@ import type {
   PreferredOutputMethod,
   ProfileUpdate,
   UserProfile,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 export const GENDERS = ["male", "female", "transgender", "prefer-not-to-say"] as const;
 export const INCOME_BANDS = ["below-poverty", "low", "middle", "upper"] as const;

@@ -1,5 +1,5 @@
 /** App-wide constants shared by UI code. */
-import type { LanguageCode } from "@schemesathi/shared";
+import type { LanguageCode } from "@civiserve/shared";
 
 export const APP_NAME = "CiviServe";
 

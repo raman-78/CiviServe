@@ -9,7 +9,7 @@ machine-checking the contract.
 
 ```
 shared/
-├── package.json            # @schemesathi/shared (workspace:*) — consumed by client
+├── package.json            # @civiserve/shared (workspace:*) — consumed by client
 ├── src/
 │   ├── index.ts
 │   └── domain/

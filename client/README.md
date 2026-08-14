@@ -56,7 +56,7 @@ client/
     ├── router/                  # route table, guards, lazy loading config
     ├── pages/                   # Route-level pages (Chat, Schemes, Centers, Profile, …)
     ├── i18n/                    # i18next init + locales/{en,hi,ta,...}.json
-    ├── types/                   # Local types + re-exports of @schemesathi/shared
+    ├── types/                   # Local types + re-exports of @civiserve/shared
     ├── config/                  # env access, feature flags, constants
     ├── styles/                  # globals.css (Tailwind + shadcn theme tokens)
     └── test/                    # test setup + shared render helpers
@@ -84,10 +84,10 @@ MapProvider         { render(container, opts), locate(...) }
 
 ```bash
 pnpm install              # from repo root (workspaces)
-pnpm --filter @schemesathi/client dev      # dev server on :5173
-pnpm --filter @schemesathi/client build    # typecheck + production build
-pnpm --filter @schemesathi/client test     # Vitest
-pnpm --filter @schemesathi/client storybook
+pnpm --filter @civiserve/client dev      # dev server on :5173
+pnpm --filter @civiserve/client build    # typecheck + production build
+pnpm --filter @civiserve/client test     # Vitest
+pnpm --filter @civiserve/client storybook
 ```
 
 ## Conventions

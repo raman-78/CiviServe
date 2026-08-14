@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { LanguageCode, SpeechSpeed } from "@schemesathi/shared";
+import type { LanguageCode, SpeechSpeed } from "@civiserve/shared";
 
 export interface ConsentDraft {
   dataProcessing: boolean;
@@ -16,7 +16,7 @@ interface SettingsState {
   highContrast: boolean;
   slowSpeech: boolean;
   /**
-   * Voice Assistance master (persisted, default OFF). While OFF, Sathi never
+   * Voice Assistance master (persisted, default OFF). While OFF, CiviServe never
    * offers to read replies aloud and repeat confirmations stay hidden. This is
    * the toggle surfaced by `VoiceToggle` in the header.
    */
@@ -90,6 +90,6 @@ export const useSettingsStore = create<SettingsState>()(
       setConsent: (patch) =>
         set((s) => ({ consent: { ...s.consent, ...patch } })),
     }),
-    { name: "scheme-sathi-settings" },
+    { name: "civiserve-settings" },
   ),
 );

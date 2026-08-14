@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SPEECH_LOCALES, SPEECH_RATES } from "@schemesathi/shared";
+import { SPEECH_LOCALES, SPEECH_RATES } from "@civiserve/shared";
 import { BrowserSpeechAdapter, createSpeechToTextAdapter } from "@/services/stt";
 import { BrowserSynthesisAdapter, createTextToSpeechAdapter } from "@/services/tts";
 

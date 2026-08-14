@@ -1,4 +1,4 @@
-# @schemesathi/shared
+# @civiserve/shared
 
 Canonical domain models shared across the monorepo.
 
@@ -13,7 +13,7 @@ Canonical domain models shared across the monorepo.
 
 ## Why not duplicate types?
 
-1. **One contract** — the client (`@schemesathi/client`) imports from this package
+1. **One contract** — the client (`@civiserve/client`) imports from this package
    via the Vite/TS path alias; the server declares its Pydantic models against the
    same names (checked by integration tests in a later prompt).
 2. **No drift** — a rename here fails `typecheck` in the client immediately.

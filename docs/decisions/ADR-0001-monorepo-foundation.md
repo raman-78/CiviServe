@@ -17,9 +17,9 @@ Single **monorepo** with pnpm workspaces for JavaScript and an in-tree Python
 package:
 
 ```
-client/    React 19 + TS + Vite (pnpm package @schemesathi/client)
+client/    React 19 + TS + Vite (pnpm package @civiserve/client)
 server/    FastAPI + SQLAlchemy (Python package, pip-installable)
-shared/    Canonical domain contracts (pnpm package @schemesathi/shared + JSON Schema)
+shared/    Canonical domain contracts (pnpm package @civiserve/shared + JSON Schema)
 database/  Alembic migrations + seeds (independent of the API package)
 docs/      Architecture + ADRs
 assets/    Brand/presentation media

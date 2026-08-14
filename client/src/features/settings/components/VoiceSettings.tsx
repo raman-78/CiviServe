@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ttsAdapter } from "@/services/tts";
-import type { SpeechSpeed } from "@schemesathi/shared";
+import type { SpeechSpeed } from "@civiserve/shared";
 import { useEffect, useState } from "react";
 
 /** Voice assistance settings: master switch, speed, repeat + preferred voice. */

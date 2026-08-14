@@ -14,7 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@schemesathi/shared": path.resolve(__dirname, "../shared/src/index.ts"),
+      "@civiserve/shared": path.resolve(__dirname, "../shared/src/index.ts"),
     },
   },
   server: {

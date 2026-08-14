@@ -1,4 +1,4 @@
-# Scheme Sathi — Database
+# CiviServe — Database
 
 Centralized PostgreSQL schema management for the monorepo. Alembic migrations
 and seed data live here, **outside** the server package, so they can be run

@@ -4,7 +4,7 @@
  */
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import type { LanguageCode } from "@schemesathi/shared";
+import type { LanguageCode } from "@civiserve/shared";
 import { en } from "./resources/en";
 import { hi } from "./resources/hi";
 import { ta } from "./resources/ta";
@@ -42,7 +42,7 @@ export const RTL_LOCALES: ReadonlySet<SupportedLocale> = new Set(["ur"]);
 
 const storedLanguage = (): SupportedLocale => {
   try {
-    const raw = window.localStorage.getItem("scheme-sathi-settings");
+    const raw = window.localStorage.getItem("civiserve-settings");
     if (!raw) return "en";
     const parsed = JSON.parse(raw) as { state?: { language?: string } };
     const lang = parsed.state?.language;

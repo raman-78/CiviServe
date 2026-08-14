@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemesathi.in/schemas/scheme.schema.json",
+  "$id": "https://civiserve.in/schemas/scheme.schema.json",
   "title": "Scheme",
   "description": "Canonical, language-neutral contract for a government scheme. The TS types in shared/src/domain/scheme.ts, the server Pydantic models, and the DB schema must all conform to this shape.",
   "type": "object",

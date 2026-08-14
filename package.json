@@ -1,5 +1,5 @@
 {
-  "name": "scheme-sathi",
+  "name": "civiserve",
   "version": "0.1.0",
   "private": true,
   "description": "Multilingual Citizen Service Chatbot for Government Schemes (HackElite 2026)",
@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "dev": "concurrently -n client,server -c cyan,green \"pnpm dev:client\" \"pnpm dev:server\"",
-    "dev:client": "pnpm --filter @schemesathi/client dev",
+    "dev:client": "pnpm --filter @civiserve/client dev",
     "dev:server": "python -m uvicorn app.main:app --reload --app-dir server",
-    "build": "pnpm --filter @schemesathi/client build",
+    "build": "pnpm --filter @civiserve/client build",
     "typecheck": "pnpm -r typecheck",
     "lint": "pnpm -r lint",
     "lint:server": "python -m ruff check server",

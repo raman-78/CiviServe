@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Three-dot "Sathi is typing…" indicator for in-flight assistant turns. */
+/** Three-dot "CiviServe is typing…" indicator for in-flight assistant turns. */
 export function TypewriterBubble({ className }: { className?: string }) {
   return (
     <div

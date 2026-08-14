@@ -88,6 +88,6 @@ def configure_logging(settings: Settings | None = None) -> None:
     root.setLevel(level)
 
 
-def get_logger(name: str = "scheme_sathi_server") -> structlog.stdlib.BoundLogger:
+def get_logger(name: str = "civiserve_server") -> structlog.stdlib.BoundLogger:
     """Return a bound structlog logger for ``name == __name__``."""
     return cast(structlog.stdlib.BoundLogger, structlog.get_logger(name))

@@ -24,9 +24,9 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @schemesathi/shared typecheck lint
-      - run: pnpm --filter @schemesathi/client typecheck lint test
-      - run: pnpm --filter @schemesathi/client build
+      - run: pnpm --filter @civiserve/shared typecheck lint
+      - run: pnpm --filter @civiserve/client typecheck lint test
+      - run: pnpm --filter @civiserve/client build
 
   server-checks:
     name: Server (ruff, mypy, pytest)

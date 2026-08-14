@@ -15,11 +15,11 @@
 
 | Variable | Example | Purpose |
 | -------- | ------- | ------- |
-| `VITE_API_BASE_URL` | `https://api.schemesathi.in` | Backend base URL (empty in dev → Vite proxy `/api`) |
+| `VITE_API_BASE_URL` | `https://api.civiserve.in` | Backend base URL (empty in dev → Vite proxy `/api`) |
 | `VITE_FIREBASE_API_KEY` | `AIza…` | Firebase web SDK (public by design) |
-| `VITE_FIREBASE_AUTH_DOMAIN` | `schemesathi.firebaseapp.com` | Firebase auth domain |
-| `VITE_FIREBASE_PROJECT_ID` | `schemesathi` | Firebase project |
-| `VITE_FIREBASE_STORAGE_BUCKET` | `schemesathi.appspot.com` | Firebase storage |
+| `VITE_FIREBASE_AUTH_DOMAIN` | `civiserve.firebaseapp.com` | Firebase auth domain |
+| `VITE_FIREBASE_PROJECT_ID` | `civiserve` | Firebase project |
+| `VITE_FIREBASE_STORAGE_BUCKET` | `civiserve.appspot.com` | Firebase storage |
 | `VITE_FIREBASE_MESSAGING_SENDER_ID` | `1234…` | Firebase messaging |
 | `VITE_FIREBASE_APP_ID` | `1:…:web:…` | Firebase app id |
 | `VITE_MAPS_PROVIDER` | `osm` \| `google` | Map provider switch (adapter) |

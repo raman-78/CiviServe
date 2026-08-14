@@ -18,7 +18,7 @@ Rationale for every third-party dependency. Pinned ranges live in
 | `sonner` | Toast/notification system (used by the error-handling layer) |
 | `lucide-react` | Icons |
 | `@fontsource-variable/inter`, `@fontsource-variable/noto-sans-devanagari` | UI + Indic-script typography (subsetted, self-hosted) |
-| `@schemesathi/shared` (workspace) | Canonical domain types |
+| `@civiserve/shared` (workspace) | Canonical domain types |
 | `firebase` ^10 | Client auth SDK (also future push/storage) |
 | `i18next`, `react-i18next` ^15/^24 | Multilingual UI resources |
 | `leaflet`, `react-leaflet` ^5 | OSM map MVP behind MapProvider adapter |

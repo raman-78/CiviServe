@@ -9,7 +9,7 @@ import type {
   RecommendationRequest,
   UserProfile,
   EligibilityStatus,
-} from "@schemesathi/shared";
+} from "@civiserve/shared";
 
 /** True when the profile has enough detail for a meaningful evaluation. */
 export function hasEligibilityInputs(profile: UserProfile | null): boolean {

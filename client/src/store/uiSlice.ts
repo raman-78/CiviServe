@@ -29,7 +29,7 @@ export const useUiStore = create<UiState>()(
       openSidebar: () => set({ sidebarOpen: true }),
     }),
     {
-      name: "scheme-sathi-ui",
+      name: "civiserve-ui",
       partialize: (s) => ({ theme: s.theme }) as Partial<UiState>,
     },
   ),

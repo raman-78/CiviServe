@@ -22,13 +22,13 @@ class Settings(BaseSettings):
     # --- App ---
     env: Literal["development", "staging", "production"] = "development"
     debug: bool = True
-    app_name: str = "scheme-sathi-server"
+    app_name: str = "civiserve-server"
     version: str = "0.1.0"
     log_level: str = "INFO"
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:4173"]
 
     # --- Database (async engine, PostgreSQL in prod) ---
-    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/scheme_sathi"
+    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/civiserve"
     db_pool_size: int = 10
     db_max_overflow: int = 20
     db_pool_recycle: int = 1800

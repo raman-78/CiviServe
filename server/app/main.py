@@ -47,7 +47,7 @@ def create_app() -> FastAPI:
     configure_logging(settings)
 
     app = FastAPI(
-        title="Scheme Sathi API",
+        title="CiviServe API",
         description=(
             "Backend for the Multilingual Citizen Service Chatbot for Government "
             "Schemes (HackElite 2026)."

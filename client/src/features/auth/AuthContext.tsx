@@ -26,7 +26,7 @@ import {
   updateProfile,
   type User,
 } from "firebase/auth";
-import type { CurrentUser, ProfileCompletion, UserProfile } from "@schemesathi/shared";
+import type { CurrentUser, ProfileCompletion, UserProfile } from "@civiserve/shared";
 import { get, post, del } from "@/lib/api-client";
 import { setAuthToken } from "@/lib/auth-token";
 import { isFirebaseConfigured } from "@/config/env";

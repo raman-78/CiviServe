@@ -1,4 +1,4 @@
-# Contributing — Scheme Sathi
+# Contributing — CiviServe
 
 ## Development workflow (summary)
 

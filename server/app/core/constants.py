@@ -7,7 +7,7 @@ hierarchy in ``core.errors``; this module holds domain/application constants.
 
 from __future__ import annotations
 
-SERVICE_NAME = "scheme-sathi-server"
+SERVICE_NAME = "civiserve-server"
 
 DEFAULT_LANGUAGE = "en"
 DEFAULT_CHANNEL = "web"

@@ -17,7 +17,7 @@ JSON + machine-parseable in production, and always tied to a `requestId`.
 ### Mandatory fields on every event
 
 ```
-timestamp, level, logger, event, requestId, service=scheme-sathi-server,
+timestamp, level, logger, event, requestId, service=civiserve-server,
 method, path, status, duration_ms, user_id (if authed), language
 ```
 

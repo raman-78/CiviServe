@@ -1,5 +1,8 @@
+[tool.vercel]
+entrypoint = "app.main:app"
+
 [project]
-name = "scheme-sathi-server"
+name = "civiserve-server"
 version = "0.1.0"
 description = "Backend for the Multilingual Citizen Service Chatbot for Government Schemes (HackElite 2026)"
 requires-python = ">=3.11"

@@ -28,7 +28,7 @@ chatbot/
 │   ├── brand/                     #   logos, favicon, fonts, palette
 │   └── media/                     #   screenshots, demo videos
 │
-├── client/                        # React 19 SPA  (@schemesathi/client)
+├── client/                        # React 19 SPA  (@civiserve/client)
 │   ├── index.html
 │   ├── package.json
 │   ├── vite.config.ts
@@ -105,7 +105,7 @@ chatbot/
 │   ├── scripts/                   # migrate, seed, backup, reset_local
 │   └── README.md
 │
-└── shared/                        # @schemesathi/shared — canonical contracts
+└── shared/                        # @civiserve/shared — canonical contracts
     ├── package.json
     ├── tsconfig.json
     ├── eslint.config.js

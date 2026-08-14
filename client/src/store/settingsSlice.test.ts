@@ -9,7 +9,7 @@ describe("language persistence", () => {
 
   it("persists the chosen language to localStorage", () => {
     useSettingsStore.getState().setLanguage("ta");
-    const raw = window.localStorage.getItem("scheme-sathi-settings");
+    const raw = window.localStorage.getItem("civiserve-settings");
     expect(raw).toBeTruthy();
     const parsed = JSON.parse(raw!) as { state?: { language?: string } };
     expect(parsed.state?.language).toBe("ta");
@@ -17,7 +17,7 @@ describe("language persistence", () => {
 
   it("survives a store rehydration from persisted state", async () => {
     window.localStorage.setItem(
-      "scheme-sathi-settings",
+      "civiserve-settings",
       JSON.stringify({ state: { language: "bn" } }),
     );
     await useSettingsStore.persist.rehydrate();
@@ -42,7 +42,7 @@ describe("voice settings persistence", () => {
 
   it("toggles voice assistance and persists it", () => {
     useSettingsStore.getState().setVoiceAssistance(true);
-    const raw = window.localStorage.getItem("scheme-sathi-settings");
+    const raw = window.localStorage.getItem("civiserve-settings");
     const parsed = JSON.parse(raw!) as { state?: { voiceAssistance?: boolean } };
     expect(parsed.state?.voiceAssistance).toBe(true);
   });

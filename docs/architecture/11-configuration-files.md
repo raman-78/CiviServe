@@ -20,7 +20,7 @@ in the repo (Prompt 1).
 
 | File | Purpose |
 | ---- | ------- |
-| `vite.config.ts` | Dev server + `/api` proxy, path aliases (`@`, `@schemesathi/shared`), manual chunks |
+| `vite.config.ts` | Dev server + `/api` proxy, path aliases (`@`, `@civiserve/shared`), manual chunks |
 | `tsconfig.json` | Solution file → app + node references |
 | `tsconfig.app.json` | App TS config (strict, `@/*` alias, shared path) |
 | `tsconfig.node.json` | Tooling TS config (vite.config) |

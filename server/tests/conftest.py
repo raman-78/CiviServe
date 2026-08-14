@@ -13,7 +13,7 @@ os.environ["DEBUG"] = "true"
 os.environ["DEV_BYPASS_AUTH"] = "true"
 os.environ["LOG_LEVEL"] = "WARNING"
 
-_TMPDIR = tempfile.mkdtemp(prefix="scheme-sathi-tests-")
+_TMPDIR = tempfile.mkdtemp(prefix="civiserve-tests-")
 os.environ["DATABASE_URL"] = f"sqlite+aiosqlite:///{_TMPDIR}/test.db"
 
 

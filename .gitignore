@@ -51,3 +51,5 @@ railway.json
 # Local data
 data/
 *.sqlite3
+
+.vercel

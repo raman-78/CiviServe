@@ -1,4 +1,4 @@
-import type { LanguageCode } from "@schemesathi/shared";
+import type { LanguageCode } from "@civiserve/shared";
 import { SpeakerButton } from "@/components/shared/SpeakerButton";
 
 interface SectionSpeakerRowProps {
